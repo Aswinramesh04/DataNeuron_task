@@ -1,0 +1,15 @@
+- name: "gcr.io/cloud-run/deploy:latest"
+  args: [
+      "run",
+      "deploy",
+      "--image",
+      "sentence-similarity-image", # Replace with 'gcr.io/<PROJECT_ID>/sentence-similarity-image' if using Docker
+      "--platform",
+      "managed",
+      "--region",
+      "<REGION>", # Replace with your desired region
+      "--set-env",
+      "SERVICE_NAME=sentence-similarity-api",
+      "--timeout",
+      "500s",
+    ]
